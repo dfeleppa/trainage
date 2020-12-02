@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root 'coaches#index'
   
-  get 'signup' => 'coach#new'
-  post 'signup' => 'coach#create'
+  get 'coach/signup' => 'coaches#new'
+  post 'coach/signup' => 'coaches#create'
 
-  get 'login' => 'sessions#new'
-  get 'login' => 'sessions#create'
+  get 'coach/login' => 'sessions#new'
+  get 'coach/login' => 'sessions#create'
 
   resources :workouts
   resources :sessions
