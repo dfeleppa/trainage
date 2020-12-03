@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_02_205140) do
+ActiveRecord::Schema.define(version: 2020_12_03_125716) do
 
   create_table "athletes", force: :cascade do |t|
-    t.string "username"
     t.string "email"
     t.string "password_digest"
     t.integer "coach_id"
@@ -22,20 +21,13 @@ ActiveRecord::Schema.define(version: 2020_12_02_205140) do
   end
 
   create_table "coaches", force: :cascade do |t|
-    t.string "username"
     t.string "email"
     t.string "password_digest"
     t.integer "athlete_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "sessions", force: :cascade do |t|
-    t.datetime "date"
-    t.boolean "complete"
-    t.integer "athlete_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
   end
 
   create_table "workouts", force: :cascade do |t|

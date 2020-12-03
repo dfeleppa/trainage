@@ -1,4 +1,10 @@
-<h1>Coach X's Athletes</h1>
+<table>
+    <tbody>
+        <%= @coaches.each do |coach| %>
+        <tr>
+            <td><%= book.email %></td>
 
-<%= link_to "Log In", coach_login_path %>
-<%= link_to "Sign Up", coach_signup_path %>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

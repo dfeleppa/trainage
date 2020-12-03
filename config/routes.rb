@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-  root 'coaches#index'
+  root 'coaches#home'
   
   get 'coach/signup' => 'coaches#new'
   post 'coach/signup' => 'coaches#create'
 
   get 'coach/login' => 'sessions#new'
   get 'coach/login' => 'sessions#create'
+
+  get 'coach/index' => 'coaches#index'
+
+  delete '/logout' => 'sessions#destroy'
 
   resources :workouts
   resources :sessions
