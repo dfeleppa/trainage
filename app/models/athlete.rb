@@ -3,8 +3,7 @@ class Athlete < ApplicationRecord
     has_many :workouts
     has_many :movements, through: :workouts
     has_secure_password
-    validates :email, presence: true
-    validates :email, uniqueness: true
+    validates :email, presence: true, uniqueness: true
 
     def self.from_omniauth(auth)
           where(email: auth.info.email).first_or_initialize do |athlete|
