@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :movements
   root 'coaches#home'
   
   get 'coach/signup' => 'coaches#new'
